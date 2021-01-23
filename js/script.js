@@ -1,3 +1,17 @@
+const cats = [
+    {
+        name: "Blob",
+        age: 10
+    },
+    {
+        name: "Harold",
+    },
+    {
+        name: "Blurt",
+        age: 21
+    }
+];
+
 // question 1
 
 const cat = {
@@ -39,6 +53,34 @@ resultsContainer.style.backgroundColor = "yellow";
 
 // question 7
 
+function catLoop(list) {
+
+    for(let i = 0; i < list.length; i++) {
+        console.log(list[i].name);
+    }
+    
+}
+
+catLoop(cats);
 
 // question 8
 
+const container = document.querySelector(".cat-container");
+
+function createCats(cats) {
+    let catsItems = "";
+    var i;
+
+    for(let i = 0; i < cats.length; i++) {
+      let name = cats[i].name;
+      let age = cats[i].age;
+
+      if (age == undefined) {
+        age = "Age unknown";
+      }
+        catsItems = catsItems + "<div>" + "<h5>" + name + "</h5>" + "<p>" + age + "</p>" + "</div>";
+        container.innerHTML = catsItems;
+    }
+}
+
+createCats(cats);
